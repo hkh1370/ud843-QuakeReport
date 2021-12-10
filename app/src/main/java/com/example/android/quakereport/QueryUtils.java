@@ -57,7 +57,8 @@ public final class QueryUtils {
 //                long time = objectProperties.getLong("time");
                 Earthquake earthquake = new Earthquake(objectProperties.getDouble("mag"),
                         objectProperties.getString("place"),
-                        objectProperties.getLong("time"));
+                        objectProperties.getLong("time"),
+                        objectProperties.getString("url"));
                 earthquakes.add(earthquake);
             }
 

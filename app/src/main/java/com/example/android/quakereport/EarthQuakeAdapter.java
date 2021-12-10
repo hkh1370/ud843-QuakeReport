@@ -42,7 +42,7 @@ public class EarthQuakeAdapter extends ArrayAdapter<Earthquake> {
         TextView setTextView;
 
         //set mag text
-        setTextView = listItemView.findViewById(R.id.mag_text);
+        setTextView = listItemView.findViewById(R.id.magnitude);
         DecimalFormat format = new DecimalFormat("0.0");
         setTextView.setText(String.valueOf(format.format(currentEarthquake.getMag())));
 
@@ -68,19 +68,21 @@ public class EarthQuakeAdapter extends ArrayAdapter<Earthquake> {
         TextView locationOffsetView = (TextView) listItemView.findViewById(R.id.location_offset);
         locationOffsetView.setText(locationOffset);
         //set Date text
-        setTextView = listItemView.findViewById(R.id.date_text);
+        setTextView = listItemView.findViewById(R.id.date);
         Date date = new Date(currentEarthquake.getDate());
         String formattedDate = formatDate(date);
         setTextView.setText(formattedDate);
 
         //set Time text
-        setTextView = listItemView.findViewById(R.id.time_text);
+        setTextView = listItemView.findViewById(R.id.time);
         String formattedTime = formatTime(date);
         setTextView.setText(formattedTime);
 
 
         return listItemView;
     }
+
+
 
     private int getMagnitudeColor(double mag) {
         int magnitude = (int) Math.floor(mag);
